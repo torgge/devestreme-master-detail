@@ -1,0 +1,8 @@
+<dx-data-grid id="gridContainer" [dataSource]="masterList" keyExpr="id" [showBorders]="true">
+  <dxo-export [enabled]="true"></dxo-export>
+  <dxo-master-detail [enabled]="true" template="detail"></dxo-master-detail>
+  <div *dxTemplate="let a of 'detail'">
+    {{ a.data | json}}
+    <app-detail-grid [key]="a.data.id"></app-detail-grid>
+  </div>
+</dx-data-grid>
