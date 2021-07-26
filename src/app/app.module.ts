@@ -7,24 +7,29 @@ import { FooterModule, ResetPasswordFormModule, CreateAccountFormModule, ChangeP
 import { AuthService, ScreenService, AppInfoService } from './shared/services';
 import { UnauthenticatedContentModule } from './unauthenticated-content';
 import { AppRoutingModule } from './app-routing.module';
+import { GridComponent } from './pages/grid/grid.component';
+import {DxDataGridModule, DxCheckBoxModule} from "devextreme-angular";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GridComponent
   ],
-  imports: [
-    BrowserModule,
-    SideNavOuterToolbarModule,
-    SideNavInnerToolbarModule,
-    SingleCardModule,
-    FooterModule,
-    ResetPasswordFormModule,
-    CreateAccountFormModule,
-    ChangePasswordFormModule,
-    LoginFormModule,
-    UnauthenticatedContentModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        SideNavOuterToolbarModule,
+        SideNavInnerToolbarModule,
+        SingleCardModule,
+        FooterModule,
+        ResetPasswordFormModule,
+        CreateAccountFormModule,
+        ChangePasswordFormModule,
+        LoginFormModule,
+        UnauthenticatedContentModule,
+        AppRoutingModule,
+        DxDataGridModule,
+        DxCheckBoxModule
+    ],
   providers: [AuthService, ScreenService, AppInfoService],
   bootstrap: [AppComponent]
 })

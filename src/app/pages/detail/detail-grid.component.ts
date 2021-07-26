@@ -2,6 +2,7 @@ import { Component, Input, AfterViewInit } from '@angular/core';
 import DataSource from 'devextreme/data/data_source';
 import ArrayStore from 'devextreme/data/array_store';
 
+
 @Component({
     selector: 'app-detail-grid',
     templateUrl: 'detail-grid.component.html'

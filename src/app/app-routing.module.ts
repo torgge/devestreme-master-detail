@@ -8,12 +8,17 @@ import { TasksComponent } from './pages/tasks/tasks.component';
 import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
 import {DetailGridComponent} from "./pages/detail/detail-grid.component";
 import {CommonModule} from "@angular/common";
+import {GridComponent} from "./pages/grid/grid.component";
 
 const routes: Routes = [
   {
     path: 'tasks',
     component: TasksComponent,
     canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'grid',
+    component: GridComponent
   },
   {
     path: 'profile',
