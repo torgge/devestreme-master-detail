@@ -22,7 +22,7 @@ export class GridComponent implements OnInit {
 
   dataSource: DataSource | undefined;
   defaultList: Listado[] = [];
-  private retorno: any[] = [];
+
   mainList = [{
     id: 1,
     mercaderias: [{id: 1, nome: 'caballo 001', apellido: 'azul'}],
@@ -90,19 +90,13 @@ export class GridComponent implements OnInit {
       });
       let analis = ll.parametros.map(a => {
         return {analisisNombre: a.parametrosAnalise.nome, analisisValor: a.parametrosAnalise.valor}
-      })
+      });
 
       parametros.map(par => {
           mercaderias.map(mer => {
             analis.map(ana => {
               let item: Listado = {...main, ...par, ...mer, ...ana} as Listado;
-              if (this.defaultList.findIndex(f => f.id === item.id &&
-                                                  f.analisisNombre === item.analisisNombre &&
-                                                  f.analisisValor === item.analisisValor &&
-                                                  f.mercaderiaApellido == item.mercaderiaApellido &&
-                                                  f.mercaderiaNombre === item.mercaderiaNombre &&
-                                                  f.parametroValue === item.parametroValue
-                                              ) === -1) this.defaultList.push(item);
+              if (this.defaultList.findIndex(f => JSON.stringify(f) === JSON.stringify(item)) === -1) this.defaultList.push(item);
             })
         })
       });
